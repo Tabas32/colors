@@ -7,6 +7,7 @@
 //            1 player 1
 //            2 player 2
 
+randomize();
 
 var rows    = 30;
 var columns = 60;

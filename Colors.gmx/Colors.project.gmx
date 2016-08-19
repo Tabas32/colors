@@ -29,6 +29,9 @@
     </scripts>
     <script>scripts\scr_find_maching_colors.gml</script>
     <script>scripts\scr_change_displaied_color.gml</script>
+    <scripts name="AI">
+      <script>scripts\scr_ai_basic.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>

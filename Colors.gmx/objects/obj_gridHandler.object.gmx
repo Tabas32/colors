@@ -75,8 +75,7 @@ scr_change_displaied_color(p2_main[| 0], p2_main);
             <kind>1</kind>
             <string>///Shift color player2
 
-var color = p2_main[| 0];
-var new_color = (color + 1) mod 7;
+var new_color = scr_ai_basic(cells, p2_main);
 
 scr_change_displaied_color(new_color, p2_main);
 </string>

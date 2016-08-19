@@ -21,7 +21,7 @@ while(!done){
     
     while(neighbors > 0){
         if((ds_list_find_value(rider[| i], 0) == rider[| 0] &&
-            ds_list_find_value(rider[| i], 3) == 0) ||
+           ds_list_find_value(rider[| i], 3) == 0) ||
            ds_list_find_value(rider[| i], 3) == rider[| 3]){
             
             ds_list_replace(rider[| i], 3, rider[| 3]);

@@ -1,4 +1,4 @@
-//scr_display_rectangle_grid(grid list id, x, y)
+///scr_display_rectangle_grid(grid list id, x, y)
 
 var grid = argument0;
 var x_ofset = argument1;
