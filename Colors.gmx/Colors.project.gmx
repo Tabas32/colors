@@ -5,7 +5,15 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Cursor">
+      <sprite>sprites\spr_cursor</sprite>
+      <sprite>sprites\spr_cursor_mask</sprite>
+    </sprites>
+    <sprites name="Buttons">
+      <sprite>sprites\spr_start</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background">
     <backgrounds name="colors">
       <background>background\bg_blue</background>
@@ -35,8 +43,13 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>
+    <objects name="Menu objects">
+      <object>objects\obj_cursor</object>
+      <object>objects\obj_start</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <room>rooms\rm_level</room>
   </rooms>
   <constants number="7">
