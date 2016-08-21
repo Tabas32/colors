@@ -9,8 +9,8 @@
 
 randomize();
 
-var rows    = 30;
-var columns = 60;
+var rows    = 22;
+var columns = 44;
 
 //Create list of cells
 var cells_list = argument0;

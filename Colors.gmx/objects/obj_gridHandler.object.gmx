@@ -30,7 +30,7 @@ cells = ds_list_create();
 
 scr_create_rectangle_grid(cells);
 
-scr_display_rectangle_grid(cells, 100, 100);
+scr_display_rectangle_grid(cells, 78, 120);
 
 //finding player 1 main cell
 var temp = 0;
@@ -51,33 +51,6 @@ scr_change_displaied_color(p1_main[| 0], p1_main);
 scr_change_displaied_color(p2_main[| 0], p2_main);
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="40">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Shift color player2
-
-var new_color = scr_ai_basic(cells, p2_main);
-
-scr_change_displaied_color(new_color, p2_main);
 </string>
           </argument>
         </arguments>
@@ -131,9 +104,14 @@ scr_change_displaied_color(new_color, p1_main);
             <string>///Find maching colors
 
 scr_find_maching_colors(cells, p1_main, p2_main);
+
+//Shift color player2
+var new_color = scr_ai_basic(cells, p2_main);
+
+scr_change_displaied_color(new_color, p2_main);
 scr_find_maching_colors(cells, p2_main, p1_main);
 
-scr_update_rectangle_colors(cells, 100, 100);
+scr_update_rectangle_colors(cells, 78, 120);
 </string>
           </argument>
         </arguments>

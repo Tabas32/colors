@@ -8,7 +8,7 @@ var counter = 0;
 var size = ds_list_size(grid);
 
 //draw black rectangle for better wiev
-tile_add(bg_black_rectangle, 0, 0, 1000, 520, x_ofset - 20, y_ofset - 20, 10);
+tile_add(bg_black_rectangle, 0, 0, 760, 392, x_ofset - 28, y_ofset - 20, 1);
 
 //draw cells
 while(counter < size){
