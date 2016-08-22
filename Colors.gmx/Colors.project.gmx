@@ -12,6 +12,7 @@
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\spr_start</sprite>
+      <sprite>sprites\spr_color_buttons</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -43,6 +44,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>
+    <object>objects\obj_color_button</object>
     <objects name="Menu objects">
       <object>objects\obj_cursor</object>
       <object>objects\obj_start</object>
