@@ -41,6 +41,8 @@
     <scripts name="AI">
       <script>scripts\scr_ai_basic.gml</script>
     </scripts>
+    <script>scripts\scr_count_cells.gml</script>
+    <script>scripts\scr_check_win.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>

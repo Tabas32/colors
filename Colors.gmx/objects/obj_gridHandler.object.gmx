@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setting grid
-cells = ds_list_create();
+            <string>///Setting grid and counter of cells
+cells         = ds_list_create();
+cells_counter = ds_list_create();
 
 scr_create_rectangle_grid(cells);
 
@@ -112,6 +113,9 @@ scr_change_displaied_color(new_color, p2_main);
 scr_find_maching_colors(cells, p2_main, p1_main);
 
 scr_update_rectangle_colors(cells, 78, 120);
+
+scr_count_cells(cells, cells_counter);
+scr_check_win(cells_counter);
 </string>
           </argument>
         </arguments>
