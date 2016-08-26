@@ -60,6 +60,7 @@
     <instance objName="obj_color_button" x="576" y="512" name="inst_913638C9" locked="0" code="color = WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_color_button" x="672" y="512" name="inst_BFDB90C0" locked="0" code="color = PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_color_button" x="768" y="512" name="inst_D4C38026" locked="0" code="color = CIAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_winer" x="416" y="64" name="inst_0F841EC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

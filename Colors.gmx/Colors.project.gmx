@@ -14,6 +14,7 @@
       <sprite>sprites\spr_start</sprite>
       <sprite>sprites\spr_color_buttons</sprite>
     </sprites>
+    <sprite>sprites\spr_win_text</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="colors">
@@ -44,6 +45,9 @@
     <script>scripts\scr_count_cells.gml</script>
     <script>scripts\scr_check_win.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_win_text</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>
     <object>objects\obj_color_button</object>
@@ -51,10 +55,12 @@
       <object>objects\obj_cursor</object>
       <object>objects\obj_start</object>
     </objects>
+    <object>objects\obj_winer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_level</room>
+    <room>rooms\rm_win</room>
   </rooms>
   <constants number="7">
     <constant name="RED">0</constant>
