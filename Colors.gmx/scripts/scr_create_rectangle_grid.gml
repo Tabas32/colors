@@ -1,7 +1,7 @@
 ///scr_create_rectangle_grid(list id)
 
 //every list of cell has form:
-//{[color] [row] [column] [ocupation] [neighbors]}
+//{[color] [row / y] [column / x] [ocupation] [neighbors]}
 //color - from 0 to 6
 //ocupation - 0 none
 //            1 player 1

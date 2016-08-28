@@ -35,18 +35,22 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_check_win.gml</script>
+    <script>scripts\scr_change_displaied_color.gml</script>
     <scripts name="rectangle_grid_functions">
       <script>scripts\scr_display_rectangle_grid.gml</script>
       <script>scripts\scr_create_rectangle_grid.gml</script>
       <script>scripts\scr_update_rectangle_colors.gml</script>
     </scripts>
-    <script>scripts\scr_find_maching_colors.gml</script>
-    <script>scripts\scr_change_displaied_color.gml</script>
     <scripts name="AI">
       <script>scripts\scr_ai_basic.gml</script>
     </scripts>
-    <script>scripts\scr_count_cells.gml</script>
-    <script>scripts\scr_check_win.gml</script>
+    <scripts name="Grid funcitons">
+      <script>scripts\scr_count_cells.gml</script>
+      <script>scripts\scr_find_maching_colors.gml</script>
+      <script>scripts\scr_grid_find_xy.gml</script>
+      <script>scripts\scr_copy_grid.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_win_text</font>

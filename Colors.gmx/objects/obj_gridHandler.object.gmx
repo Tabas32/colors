@@ -57,6 +57,40 @@ scr_change_displaied_color(p2_main[| 0], p2_main);
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var copy = ds_list_create();
+
+scr_copy_grid(cells, copy);
+
+//Shift color player2
+var new_color = scr_ai_basic(cells, p2_main);
+
+var p1_copy = scr_grid_find_xy(copy, p1_main[| 2], p1_main[| 1]);
+var p2_copy = scr_grid_find_xy(copy, p2_main[| 2], p2_main[| 1]);
+scr_find_maching_colors(copy, p2_copy, p1_copy);
+
+scr_update_rectangle_colors(cells, 78, 120);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="38">
       <action>
         <libid>1</libid>
