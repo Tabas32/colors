@@ -1,7 +1,9 @@
-///scr_copy_grid(source grid list id, target grid list id)
+///scr_grid_copy(source grid list id, target grid list id)
 
 var source = argument0;
 var target = argument1;
+
+scr_grid_qsort_xy(source, 0, ds_list_size(source) - 1);
 
 target[| 0] = ds_list_create();
 ds_list_add(target[| 0], ds_list_find_value(source[| 0], 0), ds_list_find_value(source[| 0], 1),
@@ -13,12 +15,12 @@ while(r_position < ds_list_size(target)){
     var rider = target[| r_position];
     
     //find riders original in source
-    var r_original = scr_grid_find_xy(source, rider[| 2], rider[| 1]);
+    var r_original = scr_grid_binarysearch_xy(source, rider[| 2], rider[| 1]);
     
     //add neighbors to rider
     var r_len = ds_list_size(r_original);
     for(var i = 4; i < r_len; i++){
-        var neighbor = scr_grid_find_xy(target, ds_list_find_value(r_original[| i], 2), ds_list_find_value(r_original[| i], 1));
+        var neighbor = scr_grid_binarysearch_xy(target, ds_list_find_value(r_original[| i], 2), ds_list_find_value(r_original[| i], 1));
         
         //if neighbor is alredy copied then rider can reference it
         //else it must be copied first
@@ -26,8 +28,15 @@ while(r_position < ds_list_size(target)){
             neighbor = ds_list_create();
             ds_list_add(neighbor, ds_list_find_value(r_original[| i], 0), ds_list_find_value(r_original[| i], 1),
                                   ds_list_find_value(r_original[| i], 2), ds_list_find_value(r_original[| i], 3));
-                                  
-            ds_list_add(target, neighbor);
+            
+            //add neighbor to right place (to be target sorted by xy)
+            var j           = 0;
+            var target_size = ds_list_size(target);
+            
+            while(j < target_size && scr_compare_xy(neighbor, target[| j++])){
+            }
+                                 
+            ds_list_insert(target, j - 1, neighbor);
         }
         
         ds_list_add(rider, neighbor);

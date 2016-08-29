@@ -76,7 +76,7 @@ scr_change_displaied_color(p2_main[| 0], p2_main);
             <kind>1</kind>
             <string>var copy = ds_list_create();
 
-scr_copy_grid(cells, copy);
+scr_grid_copy(cells, copy);
 
 //Shift color player2
 var new_color = scr_ai_basic(cells, p2_main);

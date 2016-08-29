@@ -49,7 +49,9 @@
       <script>scripts\scr_count_cells.gml</script>
       <script>scripts\scr_find_maching_colors.gml</script>
       <script>scripts\scr_grid_find_xy.gml</script>
-      <script>scripts\scr_copy_grid.gml</script>
+      <script>scripts\scr_grid_copy.gml</script>
+      <script>scripts\scr_grid_qsort_xy.gml</script>
+      <script>scripts\scr_grid_binarysearch_xy.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
