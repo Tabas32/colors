@@ -1,4 +1,6 @@
 ///scr_ai_basic(id of grid list, id enemy main cell)
+//returns color
+
 
 //initializing list for looping through grid
 var grid = argument0

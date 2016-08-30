@@ -86,7 +86,7 @@ while(!done){
 
 //change ocupation and color for rest cells
 var size = ds_list_size(grid);
-for(i = 0; i < size; i++){
+for(var i = 0; i < size; i++){
     ds_list_replace(grid[| i], 3, main_cell[| 3]);
     ds_list_replace(grid[| i], 0, main_cell[| 0]);
 }

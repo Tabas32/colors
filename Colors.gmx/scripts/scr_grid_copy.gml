@@ -1,9 +1,9 @@
 ///scr_grid_copy(source grid list id, target grid list id)
+//source must be sorted by scr_grid_qsort_xy to work properly
 
 var source = argument0;
 var target = argument1;
 
-scr_grid_qsort_xy(source, 0, ds_list_size(source) - 1);
 
 target[| 0] = ds_list_create();
 ds_list_add(target[| 0], ds_list_find_value(source[| 0], 0), ds_list_find_value(source[| 0], 1),

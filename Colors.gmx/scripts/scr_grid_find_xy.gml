@@ -5,7 +5,7 @@ var wanted_x = argument1;
 var wanted_y = argument2;
 
 var len = ds_list_size(list);
-for(i = 0; i < len; i++){
+for(var i = 0; i < len; i++){
     if(ds_list_find_value(list[| i], 2) == wanted_x && ds_list_find_value(list[| i], 1) == wanted_y){
         return list[| i];
     }

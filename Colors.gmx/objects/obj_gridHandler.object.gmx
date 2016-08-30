@@ -141,7 +141,7 @@ scr_change_displaied_color(new_color, p1_main);
 scr_find_maching_colors(cells, p1_main, p2_main);
 
 //Shift color player2
-var new_color = scr_ai_basic(cells, p2_main);
+var new_color = scr_ai_better(cells,p1_main, p2_main);
 
 scr_change_displaied_color(new_color, p2_main);
 scr_find_maching_colors(cells, p2_main, p1_main);

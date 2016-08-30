@@ -44,6 +44,7 @@
     </scripts>
     <scripts name="AI">
       <script>scripts\scr_ai_basic.gml</script>
+      <script>scripts\scr_ai_better.gml</script>
     </scripts>
     <scripts name="Grid funcitons">
       <script>scripts\scr_count_cells.gml</script>
@@ -52,6 +53,7 @@
       <script>scripts\scr_grid_copy.gml</script>
       <script>scripts\scr_grid_qsort_xy.gml</script>
       <script>scripts\scr_grid_binarysearch_xy.gml</script>
+      <script>scripts\scr_grid_destroy.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
