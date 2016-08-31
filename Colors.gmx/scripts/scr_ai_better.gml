@@ -24,7 +24,7 @@ for(var i = 0; i < 7; i++){
     
     scr_find_maching_colors(grid_copy, p2_copy, p1_copy);
     scr_count_cells(grid_copy, cell_counter);
-    
+
     if(cell_counter[| 2] > maximum){
         maximum = cell_counter[| 2];
         ret_val = i;

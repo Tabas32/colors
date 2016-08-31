@@ -5,6 +5,7 @@ var list = argument0;
 var len = ds_list_size(list);
 repeat(len){
     ds_list_destroy(list[| 0]);
+    ds_list_delete(list, 0);
 }
 
 ds_list_destroy(list);

@@ -33,10 +33,24 @@ if(i < right) scr_grid_qsort_xy(list, i, right);
 var cell_a = argument0;
 var cell_b = argument1;
 
-if(cell_a[| 1] > cell_b[| 1]) return 1;
-else if(cell_a[| 1] < cell_b[| 1]) return -1;
-else{
-    if(cell_a[| 2] > cell_b[| 2]) return 1;
-    else if(cell_a[| 2] < cell_b[| 2]) return -1;
-    else return 0;
+if(cell_a[| 1] > cell_b[| 1]){
+    return 1;
+}
+else{ 
+    if(cell_a[| 1] < cell_b[| 1]){
+        return -1;
+    }
+    else{
+        if(cell_a[| 2] > cell_b[| 2]){
+            return 1;
+        }
+        else{
+            if(cell_a[| 2] < cell_b[| 2]){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
 }
