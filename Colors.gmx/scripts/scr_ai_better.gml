@@ -16,6 +16,7 @@ for(var i = 0; i < 7; i++){
     var grid_copy = ds_list_create();
     
     scr_grid_copy(grid, grid_copy);
+    scr_grid_qsort_xy(grid_copy, 0, ds_list_size(grid_copy) - 1);
     
     var p1_copy = scr_grid_binarysearch_xy(grid_copy, p1_main[| 2], p1_main[| 1]);
     var p2_copy = scr_grid_binarysearch_xy(grid_copy, p2_main[| 2], p2_main[| 1]);
