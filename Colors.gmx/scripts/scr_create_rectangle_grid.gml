@@ -15,8 +15,8 @@ var columns = 44;
 //Create list of cells
 var cells_list = argument0;
 
-for(i = 0; i < rows; i++){
-    for(j = 0; j < columns; j++){
+for(var i = 0; i < rows; i++){
+    for(var j = 0; j < columns; j++){
         var sub_list = ds_list_create();
         ds_list_add(sub_list, -1, i, j, 0);
         
@@ -24,8 +24,8 @@ for(i = 0; i < rows; i++){
     }
 }
 
-for(i = 0; i < rows; i++){
-    for(j = 0; j < columns; j++){
+for(var i = 0; i < rows; i++){
+    for(var j = 0; j < columns; j++){
         var position = i * columns + j;
         
         ds_list_replace(cells_list[| position], 0, irandom(6));

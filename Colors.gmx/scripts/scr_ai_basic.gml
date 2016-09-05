@@ -14,7 +14,7 @@ ds_list_delete(grid, position);
 
 //initializing array for storing number of color around enemy cells
 colors[0] = 0;
-for(i = 1; i < 7; i++){
+for(var i = 1; i < 7; i++){
     colors[i] = 0;
 }
 
@@ -34,24 +34,28 @@ while(!done){
             }
         }
         
-        if(ds_list_find_value(rider[| i], 3) == 0){
+        if(ds_list_find_value(rider[| i], 3) == 0 && 
+           ds_list_find_index(c_cells, rider[| i]) < 0){
             //loop through color
             ds_list_add(c_cells, rider[| i]);
-            var c_rider    = c_cells[| ds_list_size(c_cells) - 1];
-            var c_position = ds_list_find_index(grid, c_rider);
+            
+            var c_rider_position = ds_list_size(c_cells) - 1;
+            var c_rider          = c_cells[| c_rider_position];
+            var c_position       = ds_list_find_index(grid, c_rider);
+            
             ds_list_delete(grid, c_position);
             
-            var c_done           = false;
-            var c_rider_position = 0;
+            var c_done = false;
             while(!c_done){
                 var j = 4;
                 var c_neighbors = ds_list_size(c_rider) - 4;
                 
                 while(c_neighbors > 0){
-                    if(ds_list_find_value(c_rider[| j], 0) == c_rider[| 0]){
+                    if(ds_list_find_value(c_rider[| j], 0) == c_rider[| 0] && 
+                       ds_list_find_value(c_rider[| j], 3) == 0){
                         if(ds_list_find_index(c_cells, c_rider[| j]) < 0){
                             ds_list_add(c_cells, c_rider[| j]);
-                            c_position = ds_list_find_index(grid, c_rider[| i]);
+                            c_position = ds_list_find_index(grid, c_rider[| j]);
                             ds_list_delete(grid, c_position);
                         }
                     }
@@ -98,9 +102,9 @@ ds_list_destroy(c_cells);
 
 //finding most frequent color
 var maximum = 0;
-for(i = 0; i < 7; i++){
+for(var i = 0; i < 7; i++){
     if(colors[i] > colors[maximum])
-        maximum = i
+        maximum = i;
 }
 
 return maximum;
