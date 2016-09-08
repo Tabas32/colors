@@ -28,8 +28,8 @@
             <string>///Create audio emitter
 
 a_emitter = audio_emitter_create();
-audio_emitter_gain(a_emitter, .3);
-i        = 0;
+audio_emitter_gain(a_emitter, 0.3);
+i        = 1;
 songs = ds_list_create();
 
 songs[| 0] = snd_song1;
