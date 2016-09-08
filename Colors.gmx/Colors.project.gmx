@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_song1</sound>
+    <sound>sound\snd_song2</sound>
+    <sound>sound\snd_song3</sound>
+    <sound>sound\snd_intro</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Cursor">
       <sprite>sprites\spr_cursor</sprite>
@@ -12,6 +17,7 @@
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\spr_start</sprite>
+      <sprite>sprites\spr_authors</sprite>
       <sprite>sprites\spr_menu</sprite>
       <sprite>sprites\spr_restart</sprite>
       <sprite>sprites\spr_exit</sprite>
@@ -32,6 +38,10 @@
     <background>background\bg_player_color</background>
     <background>background\bg_enemy_color</background>
     <background>background\bg_black_rectangle</background>
+    <backgrounds name="rooms">
+      <background>background\bg_authors</background>
+      <background>background\bg_menu</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -65,13 +75,16 @@
     <objects name="Menu objects">
       <object>objects\obj_cursor</object>
       <object>objects\obj_button</object>
+      <object>objects\obj_authors</object>
     </objects>
     <object>objects\obj_winer</object>
+    <object>objects\obj_music</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_level</room>
     <room>rooms\rm_win</room>
+    <room>rooms\rm_authors</room>
   </rooms>
   <constants number="7">
     <constant name="RED">0</constant>
