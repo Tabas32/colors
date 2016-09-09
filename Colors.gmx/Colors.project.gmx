@@ -24,6 +24,7 @@
       <sprite>sprites\spr_color_buttons</sprite>
     </sprites>
     <sprite>sprites\spr_win_text</sprite>
+    <sprite>sprites\spr_intro_bg</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="colors">
@@ -75,12 +76,13 @@
     <objects name="Menu objects">
       <object>objects\obj_cursor</object>
       <object>objects\obj_button</object>
-      <object>objects\obj_authors</object>
+      <object>objects\obj_intro</object>
     </objects>
     <object>objects\obj_winer</object>
-    <object>objects\obj_music</object>
+    <object>objects\obj_game_controler</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_intro</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_level</room>
     <room>rooms\rm_win</room>
