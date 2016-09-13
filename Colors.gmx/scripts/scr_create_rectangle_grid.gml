@@ -9,8 +9,8 @@
 
 randomize();
 
-var rows    = 22;
-var columns = 44;
+var rows    = 22 - (global.map * 11);
+var columns = 44 - (global.map * 22);
 
 //Create list of cells
 var cells_list = argument0;

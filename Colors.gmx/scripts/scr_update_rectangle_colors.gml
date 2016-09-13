@@ -6,23 +6,53 @@ var y_ofset = argument2;
 
 var size = ds_list_size(grid);
 var i    = 0;
+var tile = 0;
 
 while(i < size){
     var cell = grid[| i++];
     var color = cell[| 0];
     
-    if(cell[| 0] == RED)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_red);
-    if(cell[| 0] == BLUE)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_blue);
-    if(cell[| 0] == GREEN)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_green);
-    if(cell[| 0] == YELLOW)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_yellow);
-    if(cell[| 0] == WHITE)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_white);
-    if(cell[| 0] == PURPLE)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_purple);
-    if(cell[| 0] == CIAN)
-        tile_set_background(tile_layer_find(0, cell[| 2]*16 + x_ofset, cell[| 1]*16 + y_ofset), bg_cian);
+    switch(cell[| 0]){
+        case RED:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_red);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case BLUE:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_blue);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case GREEN:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_green);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case YELLOW:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_yellow);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case WHITE:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_white);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case PURPLE:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_purple);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+            
+        case CIAN:
+            tile = tile_layer_find(0, cell[| 2]*(16 + global.map * 16) + x_ofset, cell[| 1]*16 + y_ofset);
+            tile_set_background(tile, bg_cian);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+    }
 }

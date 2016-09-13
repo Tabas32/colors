@@ -5,7 +5,8 @@ var x_ofset = argument1;
 var y_ofset = argument2;
 
 var counter = 0;
-var size = ds_list_size(grid);
+var size    = ds_list_size(grid);
+var tile    = 0;
 
 //draw black rectangle for better wiev
 tile_add(bg_black_rectangle, 0, 0, 760, 392, x_ofset - 28, y_ofset - 20, 1);
@@ -14,26 +15,49 @@ tile_add(bg_black_rectangle, 0, 0, 760, 392, x_ofset - 28, y_ofset - 20, 1);
 while(counter < size){
     var cell = grid[| counter];
     
-    if(cell[| 0] == RED)
-        tile_add(bg_red, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+    switch(cell[| 0]){
+        case RED:
+            tile_add(bg_red, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
         
-    if(cell[| 0] == BLUE)
-        tile_add(bg_blue, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case BLUE:
+            tile_add(bg_blue, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
     
-    if(cell[| 0] == GREEN)
-        tile_add(bg_green, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case GREEN:
+            tile_add(bg_green, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
         
-    if(cell[| 0] == YELLOW)
-        tile_add(bg_yellow, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case YELLOW:
+            tile_add(bg_yellow, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
         
-    if(cell[| 0] == WHITE)
-        tile_add(bg_white, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case WHITE:
+            tile_add(bg_white, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
         
-    if(cell[| 0] == PURPLE)
-        tile_add(bg_purple, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case PURPLE:
+            tile_add(bg_purple, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
         
-    if(cell[| 0] == CIAN)
-        tile_add(bg_cian, 0, 0, 16, 16, 16*cell[| 2] + x_ofset, 16*cell[| 1] + y_ofset, 0);
+        case CIAN:
+            tile_add(bg_cian, 0, 0, 16, 16, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset, 0);
+            tile = tile_layer_find(0, (16 + (global.map * 16))*cell[| 2] + x_ofset, (16 + (global.map * 16))*cell[| 1] + y_ofset);
+            tile_set_scale(tile, 1 + global.map, 1 + global.map);
+            break;
+    }
         
     counter++;
 }

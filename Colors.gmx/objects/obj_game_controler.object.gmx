@@ -36,6 +36,10 @@ audio_emitter_gain(a_emitter, 0.3);
 songs[| 0] = snd_song1;
 songs[| 1] = snd_song2;
 songs[| 2] = snd_song3;
+
+//Global variables
+global.map     = 0;
+global.players = 0;
 </string>
           </argument>
         </arguments>
@@ -95,6 +99,9 @@ switch(room){
         room_goto(rm_menu);
         break;
     case rm_authors:
+        room_goto(rm_menu);
+        break;
+    case rm_setting:
         room_goto(rm_menu);
         break;
 }

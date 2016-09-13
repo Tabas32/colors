@@ -52,9 +52,9 @@
   </views>
   <instances>
     <instance objName="obj_cursor" x="128" y="96" name="inst_4FC18FA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="331" y="280" name="inst_018E0FBD" locked="0" code="room_to_go = rm_level;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button" x="331" y="280" name="inst_018E0FBD" locked="0" code="room_to_go = rm_setting;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button" x="333" y="525" name="inst_1C701D2F" locked="0" code="room_to_go = &quot;exit&quot;;&#xA;&#xA;sprite_index = spr_exit;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button" x="333" y="399" name="inst_89DF0989" locked="0" code="room_to_go = rm_authors;&#xA;&#xA;sprite_index = spr_authors;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button" x="333" y="399" name="inst_89DF0989" locked="0" code="room_to_go = rm_authors;&#xA;&#xA;sprite_index = spr_authors;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_game_controler" x="209" y="47" name="inst_582C67E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

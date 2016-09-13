@@ -19,6 +19,10 @@
       <sprite>sprites\spr_start</sprite>
       <sprite>sprites\spr_authors</sprite>
       <sprite>sprites\spr_menu</sprite>
+      <sprite>sprites\spr_big_map</sprite>
+      <sprite>sprites\spr_small_map</sprite>
+      <sprite>sprites\spr_single</sprite>
+      <sprite>sprites\spr_multi</sprite>
       <sprite>sprites\spr_restart</sprite>
       <sprite>sprites\spr_exit</sprite>
       <sprite>sprites\spr_color_buttons</sprite>
@@ -77,6 +81,7 @@
       <object>objects\obj_cursor</object>
       <object>objects\obj_button</object>
       <object>objects\obj_intro</object>
+      <object>objects\obj_set_button</object>
     </objects>
     <object>objects\obj_winer</object>
     <object>objects\obj_game_controler</object>
@@ -87,6 +92,7 @@
     <room>rooms\rm_level</room>
     <room>rooms\rm_win</room>
     <room>rooms\rm_authors</room>
+    <room>rooms\rm_setting</room>
   </rooms>
   <constants number="7">
     <constant name="RED">0</constant>
