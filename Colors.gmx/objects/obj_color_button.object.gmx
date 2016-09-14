@@ -30,7 +30,10 @@
 if(place_meeting(x, y, obj_cursor)){
     image_index = color + 7;
     if(mouse_check_button_pressed(mb_left)){
-        scr_change_displaied_color(color, obj_gridHandler.p1_main);
+        if(obj_gridHandler.turn == 2)
+            scr_change_displaied_color(color, obj_gridHandler.p2_main);
+        else
+            scr_change_displaied_color(color, obj_gridHandler.p1_main);
     }
 }
 else{

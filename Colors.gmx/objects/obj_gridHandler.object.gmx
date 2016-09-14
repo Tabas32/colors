@@ -51,6 +51,9 @@ p2_main = cells[| (temp - 1)];
 scr_change_displaied_color(p1_main[| 0], p1_main);
 scr_change_displaied_color(p2_main[| 0], p2_main);
 
+//curent turn
+turn = global.players;
+
 
 </string>
           </argument>
@@ -102,20 +105,35 @@ scr_change_displaied_color(new_color, p1_main);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Find maching colors
+            <string>///Make turn
 
-scr_find_maching_colors(cells, p1_main, p2_main);
+if(turn == 0){
+    scr_find_maching_colors(cells, p1_main, p2_main);
 
-//Shift color player2
-var new_color = scr_ai_basic(cells,p2_main);
-
-scr_change_displaied_color(new_color, p2_main);
-scr_find_maching_colors(cells, p2_main, p1_main);
-
-scr_update_rectangle_colors(cells, 78, 120);
-
-scr_count_cells(cells, cells_counter);
-scr_check_win(cells_counter);
+    //Shift color player2
+    var new_color = scr_ai_basic(cells,p2_main);
+    
+    scr_change_displaied_color(new_color, p2_main);
+    scr_find_maching_colors(cells, p2_main, p1_main);
+    
+    scr_update_rectangle_colors(cells, 78, 120);
+    
+    scr_count_cells(cells, cells_counter);
+    scr_check_win(cells_counter);
+}
+else{
+    if(turn == 1)
+        scr_find_maching_colors(cells, p1_main, p2_main);
+    else
+        scr_find_maching_colors(cells, p2_main, p1_main);
+        
+    scr_update_rectangle_colors(cells, 78, 120);
+        
+    scr_count_cells(cells, cells_counter);
+    scr_check_win(cells_counter);
+    
+    turn = (turn mod 2) + 1;
+}
 </string>
           </argument>
         </arguments>
