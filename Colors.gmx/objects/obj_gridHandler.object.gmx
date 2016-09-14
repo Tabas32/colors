@@ -78,11 +78,18 @@ turn = global.players;
           <argument>
             <kind>1</kind>
             <string>///Shift color player1
-
-var color = p1_main[| 0];
-var new_color = (color + 1) mod 7;
-
-scr_change_displaied_color(new_color, p1_main);
+if(turn == 2){
+    var color = p2_main[| 0];
+    var new_color = (color + 1) mod 7;
+    
+    scr_change_displaied_color(new_color, p2_main);
+}
+else{
+    var color = p1_main[| 0];
+    var new_color = (color + 1) mod 7;
+    
+    scr_change_displaied_color(new_color, p1_main);
+}
 </string>
           </argument>
         </arguments>

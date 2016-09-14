@@ -28,7 +28,6 @@
             <string>///Colide with cursor
 
 if(place_meeting(x, y, obj_cursor)){
-    image_index = 1;
     if(mouse_check_button_pressed(mb_left)){
         if(set_to_change == "map")
             global.map = set_value;
@@ -37,8 +36,29 @@ if(place_meeting(x, y, obj_cursor)){
             global.players = set_value;
     }
 }
-else{
-    image_index = 0;
+
+//set sprite
+image_index = 0;
+switch(sprite_index){
+    case spr_big_map:
+        if(global.map == 0)
+            image_index = 1;
+        break;
+        
+    case spr_small_map:
+        if(global.map == 1)
+            image_index = 1;
+        break;
+        
+    case spr_single:
+        if(global.players == 0)
+            image_index = 1;
+        break;
+        
+    case spr_multi:
+        if(global.players == 1)
+            image_index = 1;
+        break;
 }
 </string>
           </argument>
