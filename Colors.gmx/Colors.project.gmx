@@ -23,12 +23,14 @@
       <sprite>sprites\spr_small_map</sprite>
       <sprite>sprites\spr_single</sprite>
       <sprite>sprites\spr_multi</sprite>
+      <sprite>sprites\spr_multi_2</sprite>
       <sprite>sprites\spr_restart</sprite>
       <sprite>sprites\spr_exit</sprite>
       <sprite>sprites\spr_color_buttons</sprite>
     </sprites>
     <sprite>sprites\spr_win_text</sprite>
     <sprite>sprites\spr_intro_bg</sprite>
+    <sprite>sprites\spr_lan_menu</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="colors">
@@ -82,6 +84,7 @@
       <object>objects\obj_button</object>
       <object>objects\obj_intro</object>
       <object>objects\obj_set_button</object>
+      <object>objects\obj_trst_toset2</object>
     </objects>
     <object>objects\obj_winer</object>
     <object>objects\obj_game_controler</object>
@@ -93,6 +96,7 @@
     <room>rooms\rm_win</room>
     <room>rooms\rm_authors</room>
     <room>rooms\rm_setting</room>
+    <room>rooms\rm_setting_2</room>
   </rooms>
   <constants number="7">
     <constant name="RED">0</constant>
