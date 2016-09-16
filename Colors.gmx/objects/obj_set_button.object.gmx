@@ -39,6 +39,10 @@ if(place_meeting(x, y, obj_cursor)){
             image_index = 1;
             instance_create(3, 3, obj_trst_toset2);
         }
+        
+        if(room_to_go == 1){
+            instance_create(3, 3, obj_trst_toset1);
+        }
     }
 }
 

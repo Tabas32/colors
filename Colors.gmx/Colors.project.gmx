@@ -48,6 +48,7 @@
     <backgrounds name="rooms">
       <background>background\bg_authors</background>
       <background>background\bg_menu</background>
+      <background>background\bg_set_2</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -85,6 +86,7 @@
       <object>objects\obj_intro</object>
       <object>objects\obj_set_button</object>
       <object>objects\obj_trst_toset2</object>
+      <object>objects\obj_trst_toset1</object>
     </objects>
     <object>objects\obj_winer</object>
     <object>objects\obj_game_controler</object>

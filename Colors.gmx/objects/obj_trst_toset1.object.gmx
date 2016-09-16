@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,21 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create audio emitter
+            <string>currentframe = 0;
+maxframes = 8;
 
-a_emitter = audio_emitter_create();
-i         = 2;
-songs     = ds_list_create();
+persistent = true; // when changing room keep this object alive
 
-audio_emitter_gain(a_emitter, 0.3);
+// copy the old room so we can display it on the second room
+sur_oldroom = surface_create(224,room_height);
+surface_set_target(sur_oldroom);
+draw_sprite(spr_lan_menu, 0, 0, 0);
+surface_reset_target();
 
-songs[| 0] = snd_song1;
-songs[| 1] = snd_song2;
-songs[| 2] = snd_song3;
-
-//Global variables
-global.map     = 0;
-global.players = 0;
+// We have recorded what the old room looks like so we can instantly go to the next room.
+room_goto(rm_setting); 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>surface_free(sur_newroom)
+surface_free(sur_oldroom)
 </string>
           </argument>
         </arguments>
@@ -62,18 +84,24 @@ global.players = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Control soundtrack
-if(!audio_is_playing(songs[| i])){
-    i = (i + 1) mod 3;
-    
-    audio_play_sound_on(a_emitter, songs[| i], false, 10);
+            <string>currentframe++
+
+if (currentframe &gt; maxframes) {
+    instance_destroy() // The transition has finished so destroy it
+}
+
+
+// We are now on the second room so record that room. 
+if (currentframe == 1) { 
+    sur_newroom = surface_create(room_width,room_height);
+    surface_copy(sur_newroom,0,0,application_surface);
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="32">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -90,46 +118,30 @@ if(!audio_is_playing(songs[| i])){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_set_button.x -= 20;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Change room
-switch(room){
-    case rm_menu:
-        game_end();
-        break;
-    case rm_level:
-        room_goto(rm_menu);
-        break;
-    case rm_authors:
-        room_goto(rm_menu);
-        break;
-    case rm_setting:
-        room_goto(rm_menu);
-        break;
-    case rm_setting_2:
-        room_goto(rm_menu);
-        break;
+            <string>if (currentframe &gt; 1) {
+
+    // convert the number of frames that have passed into a number between 0 and the room width
+    var slideamount = 224 - ((224 div maxframes) * currentframe);
+
+    if (surface_exists(sur_oldroom)) {
+        draw_surface(sur_oldroom, room_width-slideamount, 0)
+    }
+
+    if (surface_exists(sur_newroom)) {
+        draw_surface(sur_newroom, -slideamount, 0)
+    }
+}
+
+
+/// I do this to hide the flicker where the next room pops up for 1 frame 
+if (currentframe == 1) { 
+    if (surface_exists(sur_oldroom)) {
+        draw_surface(sur_oldroom, room_width-224, 0);
+    }
+    
+    if(surface_exists(sur_newroom)){
+        draw_surface(sur_newroom, -224, 0);
+    }
 }
 </string>
           </argument>
