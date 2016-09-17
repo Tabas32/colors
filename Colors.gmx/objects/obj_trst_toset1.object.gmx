@@ -36,6 +36,9 @@ surface_set_target(sur_oldroom);
 draw_sprite(spr_lan_menu, 0, 0, 0);
 surface_reset_target();
 
+sur_oneframe = surface_create(room_width,room_height);
+surface_copy(sur_oneframe, 0, 0, application_surface);
+
 // We have recorded what the old room looks like so we can instantly go to the next room.
 room_goto(rm_setting); 
 </string>
@@ -60,8 +63,8 @@ room_goto(rm_setting);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>surface_free(sur_newroom)
-surface_free(sur_oldroom)
+            <string>surface_free(sur_newroom);
+surface_free(sur_oldroom);
 </string>
           </argument>
         </arguments>
@@ -92,7 +95,11 @@ if (currentframe &gt; maxframes) {
 
 
 // We are now on the second room so record that room. 
-if (currentframe == 1) { 
+if (currentframe == 2) {
+    if(surface_exists(sur_oneframe)){
+        surface_free(sur_oneframe);
+    }
+    
     sur_newroom = surface_create(room_width,room_height);
     surface_copy(sur_newroom,0,0,application_surface);
 }
@@ -121,26 +128,27 @@ if (currentframe == 1) {
             <string>if (currentframe &gt; 1) {
 
     // convert the number of frames that have passed into a number between 0 and the room width
-    var slideamount = 224 - ((224 div maxframes) * currentframe);
-
-    if (surface_exists(sur_oldroom)) {
-        draw_surface(sur_oldroom, room_width-slideamount, 0)
-    }
+    var slideamount = 124 - ((224 div maxframes) * currentframe);
+    
+    if(slideamount &lt; 0)
+        slideamount = 0;
 
     if (surface_exists(sur_newroom)) {
         draw_surface(sur_newroom, -slideamount, 0)
+    }
+    
+    slideamount = 224 - ((224 div maxframes) * currentframe);
+    
+    if (surface_exists(sur_oldroom)) {
+        draw_surface(sur_oldroom, room_width-slideamount, 0)
     }
 }
 
 
 /// I do this to hide the flicker where the next room pops up for 1 frame 
 if (currentframe == 1) { 
-    if (surface_exists(sur_oldroom)) {
-        draw_surface(sur_oldroom, room_width-224, 0);
-    }
-    
-    if(surface_exists(sur_newroom)){
-        draw_surface(sur_newroom, -224, 0);
+    if (surface_exists(sur_oneframe)) {
+        draw_surface(sur_oneframe, 0, 0);
     }
 }
 </string>

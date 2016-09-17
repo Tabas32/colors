@@ -121,12 +121,13 @@ if (currentframe == 2) {
             <string>if (currentframe &gt; 1) {
 
     // convert the number of frames that have passed into a number between 0 and the room width
-    var slideamount = (224 div maxframes) * currentframe;
+    var slideamount = (100 div maxframes) * currentframe;
 
     if (surface_exists(sur_oldroom)) {
         draw_surface(sur_oldroom,-slideamount,0)
     }
 
+    slideamount = (224 div maxframes) * currentframe;
     if (surface_exists(sur_newroom)) {
         draw_surface(sur_newroom,room_width-slideamount,0)
     }
