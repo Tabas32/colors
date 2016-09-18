@@ -31,6 +31,9 @@
     <sprite>sprites\spr_win_text</sprite>
     <sprite>sprites\spr_intro_bg</sprite>
     <sprite>sprites\spr_lan_menu</sprite>
+    <sprites name="lan">
+      <sprite>sprites\spr_text_box</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="colors">
@@ -73,9 +76,14 @@
       <script>scripts\scr_grid_binarysearch_xy.gml</script>
       <script>scripts\scr_grid_destroy.gml</script>
     </scripts>
+    <scripts name="lan">
+      <script>scripts\scr_display_text_state.gml</script>
+      <script>scripts\scr_read_text_state.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_win_text</font>
+    <font>fonts\fnt_ip</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_gridHandler</object>
@@ -87,6 +95,8 @@
       <object>objects\obj_set_button</object>
       <object>objects\obj_trst_toset2</object>
       <object>objects\obj_trst_toset1</object>
+      <object>objects\obj_text</object>
+      <object>objects\obj_text_box</object>
     </objects>
     <object>objects\obj_winer</object>
     <object>objects\obj_game_controler</object>
