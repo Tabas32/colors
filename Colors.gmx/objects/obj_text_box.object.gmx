@@ -49,13 +49,24 @@ state    = scr_display_text_state;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(state, text_obj);
+            <string>///Colide with cursor
+
+if(place_meeting(x, y, obj_cursor) &amp;&amp;
+    mouse_check_button_pressed(mb_left) &amp;&amp;
+    state == scr_display_text_state){
+        keyboard_string = text_obj.text;
+        state = scr_read_text_state;
+}
+
+if(!place_meeting(x, y, obj_cursor) &amp;&amp;
+    mouse_check_button_pressed(mb_left) &amp;&amp;
+    state == scr_read_text_state){
+        state = scr_display_text_state;
+}
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,13 +83,9 @@ state    = scr_display_text_state;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x, y, obj_cursor) &amp;&amp; state == scr_display_text_state){
-    state = scr_read_text_state;
-}
+            <string>///Execute state
 
-if(!place_meeting(x, y, obj_cursor) &amp;&amp; state == scr_read_text_state){
-    state = scr_display_text_state;
-}
+script_execute(state, text_obj);
 </string>
           </argument>
         </arguments>

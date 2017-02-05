@@ -54,10 +54,10 @@
     <instance objName="obj_button" x="320" y="448" name="inst_98C7090B" locked="0" code="room_to_go = rm_level;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_set_button" x="288" y="160" name="inst_E68C9BC6" locked="0" code="set_to_change = &quot;map&quot;;&#xA;set_value = 0;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_big_map;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_set_button" x="576" y="160" name="inst_759C5549" locked="0" code="set_to_change = &quot;map&quot;;&#xA;set_value = 1;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_small_map;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_set_button" x="256" y="320" name="inst_523CBF15" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 0;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_single;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_set_button" x="448" y="320" name="inst_0049316E" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 1;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_multi;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_set_button" x="256" y="320" name="inst_523CBF15" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 0;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_single;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_set_button" x="448" y="320" name="inst_0049316E" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 1;&#xA;room_to_go = 0;&#xA;&#xA;sprite_index = spr_multi;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cursor" x="448" y="192" name="inst_D41B3325" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_set_button" x="640" y="320" name="inst_6C78BBBC" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 3;&#xA;room_to_go = 2;&#xA;&#xA;sprite_index = spr_multi_2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_set_button" x="640" y="320" name="inst_6C78BBBC" locked="0" code="set_to_change = &quot;players&quot;;&#xA;set_value = 3;&#xA;room_to_go = 2;&#xA;&#xA;sprite_index = spr_multi_2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
